@@ -1,0 +1,13 @@
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.col {
+    padding: 60px;
+}

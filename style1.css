@@ -1,4 +1,16 @@
-#navbar {
+* {
+    box-sizing: border-box;
+}
+
+.col {
+    text-align: center;
+}
+
+
+/* Below is what I started with. I copied and pasted it below in case I needed to reference it, but I believe what is written above is correct. */
+
+
+/* #navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,3 +23,28 @@
 .col {
     padding: 60px;
 }
+button {
+    display: block;
+    margin: 10px;
+}
+#questionset-1 {
+    display: none;
+}
+#questionset-2 {
+    display: none;
+}
+#questionset-3 {
+    display: none;
+}
+#questionset-4 {
+    display: none;
+}
+#questionset-5 {
+    display: none;
+}
+#enterinit {
+    display: none;
+}
+#viewhs {
+    display: none;
+} */

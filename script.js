@@ -29,17 +29,23 @@ var questions = [
 // Declare variables
 
 var startButton = document.getElementById("startbutton");
-console.log(startButton);
-
-console.log(questions[1].question);
 
 var welcome = document.getElementById("welcome");
 
+var choiceList = document.querySelector(".choiceList");
+
 startButton.addEventListener("click", function () {
     // alert("You clicked the start button");
+    // Hide welcome element, display first question.
     welcome.style.display = ("none");
-    document.querySelector(".question").textContent = questions[1].question;
-    // console.log(questions[1].question);
+    document.querySelector(".question").textContent = questions[0].question;
+    // Display answer options.
+    // document.querySelector(".choiceList").textContent = questions[0].choices;
+    for (var i = 0; i < questions[0].choices.length; i++) {
+        var newLi = document.createElement("li");
+        newLi.textContent = questions[0].choices[i];
+        choiceList.appendChild(newLi);
+    }
 })
 
 

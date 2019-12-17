@@ -6,6 +6,22 @@
     text-align: center;
 }
 
+.choiceList {
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+    text-align: left;
+    /* background-color: black;
+    color: yellow;
+    padding: 10px; */
+}
+
+li {
+    background-color: black;
+    color: yellow;
+    padding: 10px;
+}
+
 
 /* Below is what I started with. I copied and pasted it below in case I needed to reference it, but I believe what is written above is correct. */
 

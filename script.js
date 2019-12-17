@@ -38,7 +38,7 @@ var welcome = document.getElementById("welcome");
 startButton.addEventListener("click", function () {
     // alert("You clicked the start button");
     welcome.style.display = ("none");
-    document.getElementById("question").textContent = questions[1].question;
+    document.querySelector(".question").textContent = questions[1].question;
     // console.log(questions[1].question);
 })
 

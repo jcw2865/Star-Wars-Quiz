@@ -3,27 +3,27 @@ $(document).ready(function () {
         {
             question: "Which of the following is a story the Jedi won't tell you?",
             choices: ["The Jedi Civil War", "The Tragedy of Darth Plagueis the Wise", "The First Great Schism"],
-            answer: 2,
+            answer: 1,
         },
         {
             question: "Which of Mace Windu's hands was cut off by Anakin Skywalker?",
             choices: ["Left", "Right", "Both", "Neither"],
-            answer: 2,
+            answer: 1,
         },
         {
             question: "Which of Luke Skywalker's hands was cut off by Darth Vader?",
             choices: ["Left", "Right", "Both", "Neither"],
-            answer: 2,
+            answer: 1,
         },
         {
             question: "What is the name of the creature that loses an arm to Luke Skywalker on Planet Hoth?",
             choices: ["Wampa", "Tauntaun", "Rancor"],
-            answer: 1,
+            answer: 0,
         },
         {
             question: "In which of the first six Star Wars movies does no one lose a hand?",
             choices: ["Episode I", "Episode II", "Episode III", "Episode IV", "Episode V", "Episode VI"],
-            answer: 1,
+            answer: 0,
         }
     ]
 
@@ -36,6 +36,10 @@ $(document).ready(function () {
     var choiceList = document.querySelector(".choiceList");
 
     var scoreDiv = document.querySelector(".score");
+
+    var correctAnswer = 0;
+
+    var incorrectAnswer = 0;
 
     var lastQuestion = questions.length - 1;
 
@@ -56,24 +60,28 @@ $(document).ready(function () {
     //         buttons0.setAttribute('data-index', i + 1)
     //         buttons0.textContent = questions[index].choices[i];
     //         choiceList.appendChild(buttons0);
-    //         buttons0.addEventListener('click', function (evt) {
-    //             var currentAnswerValue = evt.target.getAttribute('data-index');
-    //             if (+currentAnswerValue === questions[index].answer) {
-    //                 //Answered correctly
-    //                 console.log('Correct')
-    //             }
-    //             else {
-    //                 //answered incorrectly
-    //                 console.log('InCorrect')
+    //     buttons0.addEventListener('click', function (evt) {
+    //         var currentAnswerValue = evt.target.getAttribute('data-index');
+    //         if (+currentAnswerValue === questions[index].answer) {
+    //             //Answered correctly
+    //             console.log('Correct')
+    //         }
+    //         else {
+    //             //answered incorrectly
+    //             console.log('InCorrect')
 
-    //             }
-    //             //check to see if answer is right, 
-    //             //keep track of score, ina variable
-    //         });
+    //         }
+    //         //check to see if answer is right, 
+    //         //keep track of score, ina variable
+    //     });
 
-    //     }
+    // }
     // }
     // Event listener: click start button, hide home page, reveal first question.
+
+    // $(".correctscore").text("Correct Answers: " + correctAnswer);
+    // $(".incorrectscore").text("Incorrect Answers: " + incorrectAnswer);
+
     startButton.addEventListener("click", function () {
         // alert("You clicked the start button");
         // Hide welcome element
@@ -84,11 +92,30 @@ $(document).ready(function () {
         // Display answer options
         for (var i = 0; i < questions[index].choices.length; i++) {
             var buttons = document.createElement("button");
+            buttons.setAttribute('data-index', i);
             buttons.textContent = questions[index].choices[i];
             choiceList.appendChild(buttons);
+            buttons.addEventListener('click', function (evt) {
+                var currentAnswerValue = evt.target.getAttribute('data-index');
+                if (+currentAnswerValue === questions[index].answer) {
+                    //Answered correctly
+                    console.log('Correct')
+                    correctAnswer++;
+                    console.log(correctAnswer);
+                }
+                else {
+                    //answered incorrectly
+                    console.log('InCorrect')
+                    incorrectAnswer++;
+                    console.log(incorrectAnswer);
+
+                }
+                //check to see if answer is right, 
+                //keep track of score, ina variable
+            });
         }
 
-    })
+    });
 
     // Event listener: click answer choice, hide current question, reveal subsequent questions.
     choiceList.addEventListener("click", function () {
@@ -108,12 +135,30 @@ $(document).ready(function () {
         // Display answer options.
         for (var i = 0; i < questions[index].choices.length; i++) {
             var buttons = document.createElement("button");
+            buttons.setAttribute('data-index', i);
             buttons.textContent = questions[index].choices[i];
             choiceList.appendChild(buttons);
-        }
-        //     // Function to stop displaying question and answers
-        // })
+            buttons.addEventListener('click', function (evt) {
+                var currentAnswerValue = evt.target.getAttribute('data-index');
+                if (+currentAnswerValue === questions[index].answer) {
+                    //Answered correctly
+                    console.log('Correct');
+                    correctAnswer++;
+                    console.log(correctAnswer);
+                }
+                else {
+                    //answered incorrectly
+                    console.log('InCorrect');
+                    incorrectAnswer++;
+                    console.log(incorrectAnswer);
 
-        // Third event listener: recognizes correct answers (?)
+                }
+                //check to see if answer is right, 
+                //keep track of score, ina variable
+            });
+        }
+        $(".correctscore").text("Correct Answers: " + correctAnswer);
+        $(".incorrectscore").text("Incorrect Answers: " + incorrectAnswer);
+
     });
 });

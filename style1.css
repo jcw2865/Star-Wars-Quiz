@@ -1,25 +1,49 @@
 * {
     box-sizing: border-box;
+    color: yellow;
+}
+body {
+    background-image: url(../homework-4/hyperspace.png);
+    background-size: cover;
+}
+
+.row {
+    margin-top: 200px;
 }
 
 .col {
     text-align: center;
 }
 
+#welcome {
+    background-color: black;
+    width: fit-content;
+    margin: auto;
+}
+
+.question {
+    background-color: black;
+    width: fit-content;
+    margin: auto;
+    font-size: xx-large;
+}
+
 .choiceList {
     list-style: none;
     width: fit-content;
     margin: auto;
-    text-align: left;
-    /* background-color: black;
-    color: yellow;
-    padding: 10px; */
+    display: flex;
+    flex-direction: column;
 }
 
-li {
+button {
     background-color: black;
     color: yellow;
     padding: 10px;
+}
+
+.result {
+    display: none;
 }
 
 

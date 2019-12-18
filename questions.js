@@ -5,7 +5,7 @@ var questions = [
         answer: 2,
     },
     {
-        question: "Which of Mace Windu's hands was cut off by Darth Sidious?",
+        question: "Which of Mace Windu's hands was cut off by Anakin Skywalker?",
         choices: ["Left", "Right", "Both", "Neither"],
         answer: 2,
     },

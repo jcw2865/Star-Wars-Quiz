@@ -23,6 +23,7 @@ The deployed project should look like this.
 Below is the link to the project repository followed by the link to the live website. 
 
 https://github.com/jcw2865/Star-Wars-Quiz
+
 https://jcw2865.github.io/Star-Wars-Quiz/
 
 ### Development

@@ -1,4 +1,4 @@
-# Homework-4
+# Star Wars Quiz
 
 The purpose of this project was to build a timer-based quiz that stores high scores using client-based storage, HTML, CSS, JavaScript, and JQUERY. The criteria for a succesful quiz is as follows:
 
@@ -22,7 +22,7 @@ The deployed project should look like this.
 
 Below is the link to the project repository followed by the link to the live website. 
 
-https://github.com/jcw2865/homework-4
+https://github.com/jcw2865/Star-Wars-Quiz
 https://jcw2865.github.io/homework-4/
 
 ### Development
